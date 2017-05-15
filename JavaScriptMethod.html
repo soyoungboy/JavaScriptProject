@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Js函数</title>
+	</head>
+
+	<body>
+
+		<p>点击这个按钮，来调用带参数的函数。</p>
+		<button onclick="jsMethod('Harry Potter','Wizard')">调用带参数的函数</button>
+		<button onclick="showReturn(100,200)">带有返回值的函数</button>
+		
+
+		<p>简单计算器:</p>
+		<table border="1" style="position:center;">
+			<tr>
+				<td>第一个数：</td>
+				<td><input type="text" id="first" /></td>
+			</tr>
+			<tr>
+				<td>第二个数：</td>
+				<td><input type="text" id="twice" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					&nbsp;
+					<button style="width:inherit" onclick="add()">+</button> &nbsp;
+					<button style="width:inherit" onclick="subtract()">-</button> &nbsp;
+					<button style="width:inherit" onclick="ride()">*</button> &nbsp;
+					<button style="width:inherit" onclick="devide()">/</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" rowspan="2">
+					<p id="result"></p>
+				</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript" src="test.js"></script>
+	</body>
+
+</html>
