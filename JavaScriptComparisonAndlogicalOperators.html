@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h2>比较运算符</h2>
+		<p>x=5</p>
+		<button onclick="comparisonOperators()">比较运算符</button>
+
+		<p id="demo">x==8</p>
+		<p id="demo1">x == 8</p>
+		<p id="demo2">x == 5</p>
+		<p id="demo3">x === 5</p>
+		<p id="demo4">x != 8</p>
+		<p id="demo5">x !== "5"</p>
+		<p id="demo6">x!== 5</p>
+		<p id="demo7">x > 8</p>
+		<p id="demo8">x < 8</p>
+		<p id="demo9">x >= 8</p>
+		<p id="demo10">x <= 5</p>
+		<h2>逻辑运算符</h2>
+		<p> x=6 以及 y=3</p>
+		<button onclick="logicalOperators()">比较运算符</button>
+		<p id="comparisonOperatorsdemo">(x < 10 && y > 1)</p>
+		<p id="comparisonOperatorsdemo1">(x==5 || y==5) </p>
+		<p id="comparisonOperatorsdemo2">!(x==y)</p>
+		<script>
+			function comparisonOperators() {
+				var x = 5;
+				//等于
+				document.getElementById("demo").innerHTML = x == 8;
+				document.getElementById("demo1").innerHTML = x == 5;
+				//绝对等于（值和类型均相等）
+				document.getElementById("demo2").innerHTML = x === "5";
+				document.getElementById("demo3").innerHTML = x === 5;
+				//不等于
+				document.getElementById("demo4").innerHTML = x != 8;
+				// 不绝对等于（值和类型有一个不相等，或两个都不相等）
+				document.getElementById("demo5").innerHTML = x !== "5";
+				document.getElementById("demo6").innerHTML = x!==5;
+				//大于
+				document.getElementById("demo7").innerHTML = x>8;
+				//小于
+				document.getElementById("demo8").innerHTML = x < 8;
+				//大于或等于
+				document.getElementById("demo9").innerHTML = x >= 8;
+				//小于或等于
+				document.getElementById("demo10").innerHTML = x <= 5;
+			}
+			
+			function logicalOperators(){
+				var x = 6;
+				var y = 3;
+				document.getElementById("comparisonOperatorsdemo").innerHTML = (x < 10 && y > 1);
+				document.getElementById("comparisonOperatorsdemo1").innerHTML = (x==5 || y==5);
+				document.getElementById("comparisonOperatorsdemo2").innerHTML = !(x==y);
+			}
+			
+			
+		</script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
