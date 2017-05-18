@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+
+	<body>
+
+		<button onclick="identicalComputingOperatorMistake()">恒等计算符误区</button>
+		<br/>
+		<button onclick="addMistake()">加法与连接误区</button>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<br/>
+		<button onclick="floatMistake()">浮点型数据使用误区</button>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<button onclick="stringMistake()">字符串分行使用误区</button>
+		<p id="demo4"></p>
+		<button onclick="returnRight()">Return 语句正确使用</button>
+		<p id="demo5"></p>
+		<button onclick="returnMistake()">Return 语句错误使用</button>
+		<p id="demo6"></p>
+		<button onclick="arrayRight()">Return 语句正确使用</button>
+		<p id="demo7"></p>
+		<button onclick="arrayMistake()">Return 语句错误使用</button>
+		<p id="demo8"></p>
+		<button onclick="scope()">程序块作用域</button>
+		<p id="demo9"></p>
+		<script>
+			// switch 语句会使用恒等计算符(===)进行比较
+			// === 为恒等计算符，同时检查表达式的值与类型
+			function identicalComputingOperatorMistake() {
+				var x = 10;
+				switch (x) {
+					case 10:
+						alert("hello world");
+						break;
+					default:
+						alert("default content");
+						break;
+				}
+			}
+
+			function addMistake() {
+				var x = 10;
+				var y = 5;
+				var z = x + y; // z 的结果为 15
+				document.getElementById("demo").innerHTML = z;
+				var x = 10;
+				var y = "5";
+				var z = x + y; // z 的结果为 "105"
+				document.getElementById("demo1").innerHTML = z;
+			}
+
+			function floatMistake() {
+				var x = 0.1;
+				var y = 0.2;
+				var z = x + y;
+				var a = (x * 10 + y * 10) / 10;
+				document.getElementById("demo2").innerHTML = z;
+				document.getElementById("demo3").innerHTML = a;
+			}
+
+			function stringMistake() {
+				var x = "Hello \
+				World!";
+				document.getElementById("demo4").innerHTML = x;
+			}
+			//return 正确用法
+			function returnRight() {
+				function myFunction(a) {
+					var power = 10;
+					return power;
+				}
+				document.getElementById("demo5").innerHTML = myFunction(55);
+			}
+			//return 错误用法
+			function returnMistake() {
+				function myFunction(a) {
+					var power = 10;
+					return
+					power;
+				}
+				document.getElementById("demo6").innerHTML = myFunction(55);
+			}
+
+			function arrayRight() {
+				var person = [];
+				person[0] = "John";
+				person[1] = "Doe";
+				person[2] = 46;
+				var x = person.length; // person.length 返回 3
+				var y = person[0]; // person[0] 返回 "John"
+				document.getElementById("demo7").innerHTML = "x = " + x + "y = " + y;
+			}
+
+			function arrayMistake() {
+				var person = [];
+				person["firstName"] = "John";
+				person["lastName"] = "Doe";
+				person["age"] = 46;
+				var x = person.length; // person.length 返回 0
+				var y = person[0]; // person[0] 返回 undefined
+				document.getElementById("demo8").innerHTML = "x = " + x + "y = " + y;
+			}
+			
+			/**
+			 * 在每个代码块中 JavaScript 不会创建一个新的作用域，一般各个代码块的作用域都是全局的。
+			以下代码的的变量 i 返回 10，而不是 undefined
+			 */
+			function scope() {
+				for (var i = 0; i < 10; i++) {
+					// some code
+				}
+				document.getElementById("demo9").innerHTML = i;
+			}
+		</script>
+
+	</body>
+
+</html>
