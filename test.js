@@ -301,63 +301,103 @@ function breakAndContinue() {
 		}
 }
 
-function typeConversion(){
-		document.getElementById("demo").innerHTML =
-				typeof "john" + "<br>" +
-				typeof 3.14 + "<br>" +
-				typeof NaN + "<br>" +
-				typeof false + "<br>" +
-				typeof [1, 2, 3, 4] + "<br>" +
-				typeof {
-					name: 'john',
-					age: 34
-				} + "<br>" +
-				typeof new Date() + "<br>" +
-				typeof
+function typeConversion() {
+	document.getElementById("demo").innerHTML =
+		typeof "john" + "<br>" +
+		typeof 3.14 + "<br>" +
+		typeof NaN + "<br>" +
+		typeof false + "<br>" +
+		typeof [1, 2, 3, 4] + "<br>" +
+		typeof {
+			name: 'john',
+			age: 34
+		} + "<br>" +
+		typeof new Date() + "<br>" +
+		typeof
 
-			function() {} + "<br>" +
-			typeof myCar + "<br>" +
-				typeof null;
-			//  constructor 属性
-			document.getElementById("demo1").innerHTML =
-				"john".constructor + "<br>" +
-				3.14.constructor + "<br>" +
-				NaN.constructor + "<br>" +
-				false.constructor + "<br>" + [1, 2, 3, 4].constructor + "<br>" + {
-					name: 'john',
-					age: 34
-				}.constructor + "<br>" +
-				new Date().constructor + "<br>" +
-				function() {}.constructor + "<br>";
-			//JavaScript 类型转换
-			//全局方法 String() 可以将数字转换为字符串。该方法可用于任何类型的数字，字母，变量，表达式。
-			document.getElementById("demo2").innerHTML =
-				String(123) + "<br>" +
-				String(100 + 121) + "<br>" +
-				String(true) + "<br>" +
-				String(false) + "<br>" +
-				String(Date()) + "<br>" +
-				(145).toString() + "<br>" +
-				(234 + 345).toString() + "<br>" +
-				Date().toString();
-			//字符串转换成数字
-			document.getElementById("demo3").innerHTML =
-				Number("3.14") + "<br>" + // 返回 3.14
-				Number(" ") + "<br>" + // 返回 0 
-				Number("") + "<br>" + // 返回 0
-				Number(new Date()) + "<br>" + //日期转化为数字
-				Number(true) + "<br>" + //布尔值转化成数字
-				Number(false) + "<br>" +
-				Number("99 88") + "<br>"; // 返回 NaN
-			var y = "5";
-			var x = +y;
-			//一元运算符
-			document.getElementById("demo4").innerHTML =
-				typeof y + "<br>" + typeof x;
-			//自动转换类型
-			document.getElementById("demo5").innerHTML =
-				(5 + null) + "<br>" + // 返回 5         null 转换为 0
-				("5" + null) + "<br>" + // 返回"5null"   null 转换为 "null"
-				("5" + 1) + "<br>" + // 返回 "51"      1 转换为 "1"  
-				("5" - 1) + "<br>"; // 返回 4         "5" 转换为 5
+	function() {} + "<br>" +
+	typeof myCar + "<br>" +
+		typeof null;
+	//  constructor 属性
+	document.getElementById("demo1").innerHTML =
+		"john".constructor + "<br>" +
+		3.14.constructor + "<br>" +
+		NaN.constructor + "<br>" +
+		false.constructor + "<br>" + [1, 2, 3, 4].constructor + "<br>" + {
+			name: 'john',
+			age: 34
+		}.constructor + "<br>" +
+		new Date().constructor + "<br>" +
+		function() {}.constructor + "<br>";
+	//JavaScript 类型转换
+	//全局方法 String() 可以将数字转换为字符串。该方法可用于任何类型的数字，字母，变量，表达式。
+	document.getElementById("demo2").innerHTML =
+		String(123) + "<br>" +
+		String(100 + 121) + "<br>" +
+		String(true) + "<br>" +
+		String(false) + "<br>" +
+		String(Date()) + "<br>" +
+		(145).toString() + "<br>" +
+		(234 + 345).toString() + "<br>" +
+		Date().toString();
+	//字符串转换成数字
+	document.getElementById("demo3").innerHTML =
+		Number("3.14") + "<br>" + // 返回 3.14
+		Number(" ") + "<br>" + // 返回 0 
+		Number("") + "<br>" + // 返回 0
+		Number(new Date()) + "<br>" + //日期转化为数字
+		Number(true) + "<br>" + //布尔值转化成数字
+		Number(false) + "<br>" +
+		Number("99 88") + "<br>"; // 返回 NaN
+	var y = "5";
+	var x = +y;
+	//一元运算符
+	document.getElementById("demo4").innerHTML =
+		typeof y + "<br>" + typeof x;
+	//自动转换类型
+	document.getElementById("demo5").innerHTML =
+		(5 + null) + "<br>" + // 返回 5         null 转换为 0
+		("5" + null) + "<br>" + // 返回"5null"   null 转换为 "null"
+		("5" + 1) + "<br>" + // 返回 "51"      1 转换为 "1"  
+		("5" - 1) + "<br>"; // 返回 4         "5" 转换为 5
+}
+/**
+ * 正则表达式
+ */
+function regularExpressions() {
+	var str = "Visit Runoob!";
+	var n = str.search(/oob/i);
+	document.getElementById("demo").innerHTML = n;
+	var str = document.getElementById("demo1").innerHTML;
+	var txt = str.replace(/Microsoft/i, "Apple");
+	document.getElementById("demo1").innerHTML = txt;
+	var patt1 = new RegExp("T");
+	//test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+	document.getElementById("demo2").innerHTML = patt1.test("The best things in life are free");
+	var patt1 = new RegExp("t");
+	/**
+	 * exec() 方法用于检索字符串中的正则表达式的匹配。
+	 *该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+	 */
+	document.getElementById("demo3").innerHTML = patt1.exec("The best things in life are free");
+}
+
+function exception() {
+    var message, x;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "")  throw "值为空";
+        if(isNaN(x)) throw "不是数字";
+        x = Number(x);
+        if(x < 5)    throw "太小";
+        if(x > 10)   throw "太大";
+        if(x>5 && x<10){
+        	message.innerHTML = "正确: " + x;
+        }
+    }
+    catch(err) {
+        message.innerHTML = "错误: " + err;
+    }
 }
